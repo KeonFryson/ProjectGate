@@ -197,7 +197,7 @@ public class Player : MonoBehaviour
             currentWeight = Mathf.MoveTowards(currentWeight, targetWeight, transitionSpeed * Time.deltaTime);
             anim.SetLayerWeight(layerIndex, currentWeight);
             anim.SetBool("isSwinging", true);
-            Debug.Log("Swinging");
+            //Debug.Log("Swinging");
         }
         else
         {

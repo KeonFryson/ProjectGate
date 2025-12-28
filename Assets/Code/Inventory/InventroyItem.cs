@@ -11,11 +11,20 @@ public class InventroyItem
     public InventroyItem(Item item)
     {
         this.item = item;
-        AddToStack();
+
+        
+            AddToStack();
+         
+        
     }
 
     public void AddToStack()
     {
+        if (item.maxStackSize <= 1)
+        {
+          return;
+        }
+
         stackSize++;
     }
 

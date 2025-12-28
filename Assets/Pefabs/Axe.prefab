@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 4240434283862084161}
   - component: {fileID: 879766248171573752}
   - component: {fileID: 2443943986412178085}
+  - component: {fileID: 7724469799198661610}
+  - component: {fileID: 4769683959835841504}
   m_Layer: 0
   m_Name: Axe
   m_TagString: Untagged
@@ -113,3 +115,37 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -7948815530020696128, guid: 86faef843a1172b498ebc4879fbfae9d, type: 3}
+--- !u!65 &7724469799198661610
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6737481976291670249}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.52, y: 1, z: 0.55}
+  m_Center: {x: -0.08340113, y: 0.27774018, z: -0.0001355689}
+--- !u!114 &4769683959835841504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6737481976291670249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ee341fa635f9674092f918fcbac6317, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItemPickup
+  item: {fileID: 11400000, guid: 7e6ded2d0c1d82e479cc883091f778ec, type: 2}

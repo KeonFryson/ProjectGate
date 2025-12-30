@@ -172,40 +172,33 @@ public class Player : MonoBehaviour
             else if (rotationY < 0f) rotationY += 360f;
         }
 
-        if (isHoldingItem)
-        {
-            int layerIndex = anim.GetLayerIndex("Hand");
-            float targetWeight = 0.45f;
-            float currentWeight = anim.GetLayerWeight(layerIndex);
-            currentWeight = Mathf.MoveTowards(currentWeight, targetWeight, transitionSpeed * Time.deltaTime);
-            anim.SetLayerWeight(layerIndex, currentWeight);
-        }
-        else
-        {
-            int layerIndex = anim.GetLayerIndex("Hand");
-            float targetWeight = 0.0f;
-            float currentWeight = anim.GetLayerWeight(layerIndex);
-            currentWeight = Mathf.MoveTowards(currentWeight, targetWeight, transitionSpeed * Time.deltaTime);
-            anim.SetLayerWeight(layerIndex, currentWeight);
-        }
+        int layerIndex = anim.GetLayerIndex("Hand");
+        float targetWeight = 0f;
 
         if (isSwinging)
         {
-            int layerIndex = anim.GetLayerIndex("Hand");
-            float targetWeight = 1f;
-            float currentWeight = anim.GetLayerWeight(layerIndex);
-            currentWeight = Mathf.MoveTowards(currentWeight, targetWeight, transitionSpeed * Time.deltaTime);
-            anim.SetLayerWeight(layerIndex, currentWeight);
+            targetWeight = 1f;
             anim.SetBool("isSwinging", true);
-            //Debug.Log("Swinging");
+        }
+        else if (isHoldingItem)
+        {
+            targetWeight = 0.45f;
+            anim.SetBool("isSwinging", false);
         }
         else
         {
-             
+            targetWeight = 0f;
             anim.SetBool("isSwinging", false);
-            
         }
 
+        float currentWeight = anim.GetLayerWeight(layerIndex);
+        currentWeight = Mathf.MoveTowards(
+            currentWeight,
+            targetWeight,
+            transitionSpeed * Time.deltaTime
+        );
+
+        anim.SetLayerWeight(layerIndex, currentWeight);
 
     }
 
